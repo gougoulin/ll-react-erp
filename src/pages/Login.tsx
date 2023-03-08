@@ -56,7 +56,7 @@ const BtnForget = styled(TextButton)``;
 const BtnRegister = styled(TextButton)``;
 const BtnSubmit = styled(ButtonBase)`
   grid-column: 2 / 3;
-  margin-top: ${space.medium};
+  margin-top: ${space.small};
 `;
 
 const Login = () => {
