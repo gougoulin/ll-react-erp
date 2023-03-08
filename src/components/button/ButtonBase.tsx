@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { EventHandler, ReactNode } from "react";
 import styled from "styled-components";
 import { colors, space } from "../../assets/css/params";
 
@@ -27,6 +27,7 @@ export type ButtonBaseProps = {
   btnBackground?: string;
   btnBorder?: string;
   btntextcolor?: string;
+  onClick?: EventHandler<any>;
 };
 
 const buttonVariants = {
