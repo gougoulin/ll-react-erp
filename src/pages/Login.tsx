@@ -14,7 +14,7 @@ import {
   StyledForm,
   StyledSelect,
   StyledTextInput
-} from "./login/components";
+} from "../components/login/components";
 
 const Login = () => {
   const [department, setDepartment] = useState<string>("deparment");

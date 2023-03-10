@@ -1,11 +1,9 @@
 import { ChangeEvent, Dispatch, useState } from "react";
-import { FaLock, FaMobile, FaMobileAlt, FaUserAlt } from "react-icons/fa";
+import { FaLock, FaMobileAlt, FaUserAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../assets/css/params";
-import TextButton from "../components/button/TextButton";
 import BaseInput from "../components/form/BaseInput";
-import { login } from "../router/constants";
 import {
   BtnSubmit,
   GoLogin,
@@ -13,7 +11,8 @@ import {
   PageTitle,
   StyledForm,
   StyledTextInput
-} from "./login/components";
+} from "../components/login/components";
+import { login } from "../router/constants";
 
 const StyledRadio = styled(BaseInput)`
   font-size: 1.6rem;
@@ -52,6 +51,7 @@ const LoginSignup = () => {
   const handleSubmit = (e: MouseEvent) => {
     e.preventDefault();
     console.log("form submit", username, password, phone)
+    // TODO 表单数据发送
   };
 
   const handleRedirect = (e: MouseEvent) => {

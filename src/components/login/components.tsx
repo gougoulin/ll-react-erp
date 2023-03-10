@@ -3,10 +3,10 @@ import { FaLock, FaUserAlt } from "react-icons/fa";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors, space } from "../../assets/css/params";
-import ButtonBase from "../../components/button/ButtonBase";
-import TextButton from "../../components/button/TextButton";
-import BaseInput from "../../components/form/BaseInput";
-import BaseSelect from "../../components/form/BaseSelect";
+import ButtonBase from "../button/ButtonBase";
+import TextButton from "../button/TextButton";
+import BaseInput from "../form/BaseInput";
+import BaseSelect from "../form/BaseSelect";
 import { login } from "../../router/constants";
 
 export const StyledForm = styled.form`

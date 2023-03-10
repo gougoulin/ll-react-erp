@@ -1,12 +1,9 @@
 import { ChangeEvent, Dispatch, useState } from "react";
-import { FaLock, FaMobile, FaMobileAlt, FaUserAlt } from "react-icons/fa";
+import { FaLock, FaMobileAlt, FaUserAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../assets/css/params";
 import ButtonBase from "../components/button/ButtonBase";
-import TextButton from "../components/button/TextButton";
-import BaseInput from "../components/form/BaseInput";
-import { login } from "../router/constants";
 import {
   BtnSubmit,
   GoLogin,
@@ -14,7 +11,8 @@ import {
   PageTitle,
   StyledForm,
   StyledTextInput
-} from "./login/components";
+} from "../components/login/components";
+import { login } from "../router/constants";
 
 const PasswordAgain = styled(StyledTextInput)`
   grid-column: 2 / 3;
