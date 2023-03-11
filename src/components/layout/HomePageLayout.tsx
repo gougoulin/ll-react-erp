@@ -1,5 +1,4 @@
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
