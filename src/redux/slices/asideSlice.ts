@@ -5,7 +5,7 @@ const initialState = {
   narrowWidth: "3em",
   wideWidth: "15em",
   menu: [
-    "task",
+    "dashboard",
     "project",
     "email",
     "team",

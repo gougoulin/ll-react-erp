@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import RootOutlet from "../pages/RootOutlet";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
 import LoginPasswordReset from "../pages/LoginPasswordReset";
 import LoginSignup from "../pages/LoginSignup";
 import { login, main } from "./constants";
@@ -16,7 +15,7 @@ import Email from "../pages/Email";
 import Meeting from "../pages/Meeting";
 import Project from "../pages/Project";
 import Setting from "../pages/Setting";
-import Task from "../pages/Task";
+import Dashboard from "../pages/Dashboard";
 import Team from "../pages/Team";
 
 const router = createBrowserRouter([
@@ -34,17 +33,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePageWithOutlet />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, path: main.dashboard, element: <Dashboard /> },
       { path: main.agenda, element: <Agenda /> },
       { path: main.contact, element: <Contact /> },
       { path: main.email, element: <Email /> },
-      { path: main.home, element: <Home /> },
       { path: main.meeting, element: <Meeting /> },
       { path: main.project, element: <Project /> },
       { path: main.setting, element: <Setting /> },
-      { path: main.task, element: <Task /> },
       { path: main.team, element: <Team /> },
-      { path: "*", element: <Navigate to="/" /> }
+      { path: "*", element: <Navigate to={main.dashboard} /> }
     ]
   }
 ]);

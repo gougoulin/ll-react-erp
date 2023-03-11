@@ -8,7 +8,7 @@ export const login = {
 export const main = {
   index: "/",
   home: "/home",
-  task: "/task",
+  dashboard: "/dashboard",
   project: "/project",
   email: "/email",
   team: "/team",
@@ -17,11 +17,11 @@ export const main = {
   contact: "/contact",
   setting: "/setting",
   default: "/home"
-}
+};
 
 export const navMenu: Record<string, string> = {
   home: main.home,
-  task: main.task,
+  dashboard: main.dashboard,
   project: main.project,
   email: main.email,
   team: main.team,
@@ -29,5 +29,5 @@ export const navMenu: Record<string, string> = {
   meeting: main.meeting,
   contact: main.contact,
   setting: main.setting,
-  default: main.home,
-}
+  default: main.home
+};

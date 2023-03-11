@@ -15,7 +15,7 @@ import {
 import { BsDisplay } from "react-icons/bs";
 import { colors } from "../../assets/css/params";
 
-export const Task = BsDisplay;
+export const Dashboard = BsDisplay;
 export const Project = AiFillProject;
 export const Email = AiOutlineMail;
 export const Team = AiOutlineTeam;
@@ -30,7 +30,7 @@ export const Unfold = AiOutlineMenuUnfold;
 export const DefaultUserAvatar = AiOutlineUser;
 
 const appIcons: Record<string, IconType> = {
-  Task,
+  Dashboard,
   Project,
   Email,
   Team,
