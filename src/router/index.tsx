@@ -3,13 +3,13 @@ import {
   createBrowserRouter,
   Navigate
 } from "react-router-dom";
-import LoginBase from "../pages/LoginBase";
+import RootOutlet from "../pages/RootOutlet";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import LoginPasswordReset from "../pages/LoginPasswordReset";
 import LoginSignup from "../pages/LoginSignup";
 import { login, main } from "./constants";
-import HomePageLayout from "../components/layout/HomePageLayout";
+import HomePageWithOutlet from "../pages/HomePageWithOutlet";
 import Agenda from "../pages/Agenda";
 import Contact from "../pages/Contact";
 import Email from "../pages/Email";
@@ -22,7 +22,7 @@ import Team from "../pages/Team";
 const router = createBrowserRouter([
   {
     path: login.index,
-    element: <LoginBase />,
+    element: <RootOutlet />,
     children: [
       { index: true, element: <Login /> },
       { path: login.passwordReset, element: <LoginPasswordReset /> },
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <HomePageLayout />,
+    element: <HomePageWithOutlet />,
     children: [
       { index: true, element: <Home /> },
       { path: main.agenda, element: <Agenda /> },

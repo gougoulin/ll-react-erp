@@ -18,7 +18,7 @@ const ContentBox = styled(CenterAllBox)`
 `;
 
 
-const LoginBase = () => {
+const RootOutlet = () => {
   return (
     <LoginRootBox>
       <ContentBox>
@@ -28,4 +28,4 @@ const LoginBase = () => {
   );
 };
 
-export default LoginBase;
+export default RootOutlet;

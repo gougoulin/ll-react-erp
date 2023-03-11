@@ -2,9 +2,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { RootState } from "../../redux/store";
-import AsideIconOnly from "../aside/AsideIconOnly";
-import AsideIconText from "../aside/AsideIconText";
+import { RootState } from "../redux/store";
+import AsideIconOnly from "../components/aside/AsideIconOnly";
+import AsideIconText from "../components/aside/AsideIconText";
 
 const HomePageBox = styled.div`
   display: grid;
@@ -27,7 +27,7 @@ const NavMotionWrapper = (props: any) => {
   );
 };
 
-const HomePageLayout = () => {
+const HomePageWithOutlet = () => {
   const isMiniSider = useSelector(
     (state: RootState) => state.layout.isMiniSider
   );
@@ -53,4 +53,4 @@ const HomePageLayout = () => {
   );
 };
 
-export default HomePageLayout;
+export default HomePageWithOutlet;
