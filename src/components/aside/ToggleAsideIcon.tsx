@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { regularIcons } from "../../assets/css/params";
 import { toggleSider } from "../../redux/slices/asideSlice";
 import { RootState } from "../../redux/store";
-import { fold, unfold } from "../icons";
+import { Fold, Unfold } from "../icons";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -15,9 +16,10 @@ const ToggleAsideIcon = () => {
   const isMiniSider = useSelector(
     (state: RootState) => state.aside.isMiniSider
   );
+
   return (
     <Wrapper onClick={() => dispatch(toggleSider())}>
-      {isMiniSider ? unfold : fold}
+      {isMiniSider ? <Unfold {...regularIcons} /> : <Fold {...regularIcons} />}
     </Wrapper>
   );
 };

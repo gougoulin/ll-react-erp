@@ -43,4 +43,9 @@ const space = {
   buttonPadding: "10px 16px",
 };
 
-export { colors, space };
+const regularIcons = {
+  size: "1.5em",
+  color: gray1
+}
+
+export { colors, space, regularIcons };

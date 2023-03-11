@@ -1,12 +1,3 @@
-import { login, logout } from "../slices/userSlice";
-
-const user = {
-  login,
-  logout
-};
-
-const actions = {
-  user
-};
+const actions = {};
 
 export default actions;

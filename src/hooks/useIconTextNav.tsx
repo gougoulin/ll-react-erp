@@ -2,10 +2,9 @@ import { motion } from "framer-motion";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../assets/css/params";
-import appIcons from "../components/icons";
+import AsideIcon from "../components/aside/AsideIcon";
 import { navMenu } from "../router/constants";
 
-const StyledNavLink = styled(NavLink)``;
 const Wrapper = styled(motion.li)`
   display: grid;
   grid-template-columns: 3em 1fr;
@@ -25,10 +24,10 @@ const ActiveWrapper = styled(Wrapper)`
 
 const wrapperVariants = {
   hover: {
-    backgroundColor: "rgba(0, 204, 204, 1)",
+    backgroundColor: "rgba(0, 204, 204, 1)"
   },
   init: {
-    backgroundColor: "rgba(0, 204, 204, 0)",
+    backgroundColor: "rgba(0, 204, 204, 0)"
   }
 };
 
@@ -44,19 +43,19 @@ const useIconTextNav = (menu: string[]) => {
         key={`aside-icon-txt-nav-${idx}`}
         onClick={() => navigate(navMenu[txt])}
       >
-        <span>{appIcons[txt] || appIcons["default"]}</span>
+        <AsideIcon txt={txt} />
         <span>{txt}</span>
       </Wrapper>
     );
     if ("/" + txt === location.pathname) {
-      return (
+      ret = (
         <ActiveWrapper
           variants={wrapperVariants}
           whileHover="hover"
           key={`aside-icon-txt-nav-${idx}`}
           onClick={() => navigate(navMenu[txt])}
         >
-          <span>{appIcons[txt] || appIcons["default"]}</span>
+          <AsideIcon txt={txt} />
           <span>{txt}</span>
         </ActiveWrapper>
       );

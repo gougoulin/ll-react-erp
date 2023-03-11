@@ -1,7 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../assets/css/params";
-import appIcons from "../components/icons";
+import AsideIcon from "../components/aside/AsideIcon";
+import appIcons, { Fallback } from "../components/icons";
 import { navMenu } from "../router/constants";
 
 const StyledNavLink = styled(NavLink)`
@@ -20,15 +21,16 @@ const ActiveNavLink = styled(StyledNavLink)`
 const useIconOnlyNav = (menu: string[]) => {
   const location = useLocation();
   const elementList = menu.map((txt: string, idx) => {
+    const Icon = appIcons[txt];
     let ret = (
       <StyledNavLink key={`aside-nav-${idx}`} to={navMenu[txt]}>
-        {appIcons[txt] || appIcons["default"]}
+        {<AsideIcon txt={txt} />}
       </StyledNavLink>
     );
     if ("/" + txt === location.pathname) {
       ret = (
         <ActiveNavLink key={`aside-nav-${idx}`} to={navMenu[txt]}>
-          {appIcons[txt] || appIcons["default"]}
+          {<AsideIcon txt={txt} />}
         </ActiveNavLink>
       );
     }
