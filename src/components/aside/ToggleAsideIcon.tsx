@@ -6,8 +6,8 @@ import { fold, unfold } from "../icons";
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 1vh;
-  left: 1vw;
+  bottom: 10px;
+  left: 10px;
 `;
 
 const ToggleAsideIcon = () => {

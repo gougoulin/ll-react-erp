@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
@@ -15,13 +16,14 @@ type HomePageBoxProps = {
 };
 
 const NavMotionWrapper = (props: any) => {
+  const { x, children } = props;
   return (
     <motion.div
-      initial={{ opacity: 0, x: -200 }}
+      initial={{ x: x, opacity: 0 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ type: "spring", stiffness: 50 }}
     >
-      {props.children}
+      {children}
     </motion.div>
   );
 };
@@ -37,9 +39,16 @@ const HomePageLayout = () => {
 
   return (
     <HomePageBox siderWidth={isMiniSider ? narrowWidth : wideWidth}>
-      <NavMotionWrapper>
-        {isMiniSider ? <AsideIconOnly /> : <AsideIconText />}
-      </NavMotionWrapper>
+      <AnimatePresence mode="wait">
+        <div key={isMiniSider ? `aside-icon-only` : `aside-icon-and-text`}>
+          <NavMotionWrapper x={-48}>
+            {isMiniSider ? <AsideIconOnly key="asideicononly" /> : undefined}
+          </NavMotionWrapper>
+          <NavMotionWrapper x={-240}>
+            {isMiniSider ? undefined : <AsideIconText key="asideicontext" />}
+          </NavMotionWrapper>
+        </div>
+      </AnimatePresence>
       <Outlet />
     </HomePageBox>
   );
