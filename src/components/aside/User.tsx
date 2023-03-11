@@ -8,11 +8,11 @@ import { RootState } from "../../redux/store";
 const UserBox = styled.div`
   box-sizing: border-box;
   font-size: 1.6rem;
-  min-height: 18em;
+  min-height: 15em;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: ${space.medium} 0;
+  padding: ${space.medium};
 `;
 
 const UserName = styled.h2`

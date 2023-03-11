@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../assets/css/params";
 import AsideIcon from "../components/aside/AsideIcon";
