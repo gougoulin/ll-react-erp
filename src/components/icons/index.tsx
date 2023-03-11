@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { IconType } from "react-icons";
 import {
   AiFillProject,
@@ -13,7 +12,8 @@ import {
   AiOutlineUser
 } from "react-icons/ai";
 import { BsDisplay } from "react-icons/bs";
-import { colors } from "../../assets/css/params";
+import { MdOutlineWbCloudy, MdOutlineWbSunny } from "react-icons/md";
+
 
 export const Dashboard = BsDisplay;
 export const Project = AiFillProject;
@@ -29,6 +29,9 @@ export const Unfold = AiOutlineMenuUnfold;
 
 export const DefaultUserAvatar = AiOutlineUser;
 
+export const SUNNY = MdOutlineWbSunny;
+export const CLOUDY = MdOutlineWbCloudy;
+
 const appIcons: Record<string, IconType> = {
   Dashboard,
   Project,
@@ -41,7 +44,9 @@ const appIcons: Record<string, IconType> = {
   Fallback,
   Fold,
   Unfold,
-  DefaultUserAvatar
+  DefaultUserAvatar,
+  SUNNY,
+  CLOUDY
 };
 
 export type AppIcons = typeof appIcons;

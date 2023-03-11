@@ -1,24 +1,45 @@
-import React from "react";
 import styled from "styled-components";
-import { space } from "../assets/css/params";
+import { colors, space } from "../assets/css/params";
+import CommonHeader from "../components/dashboard/CommonHeader";
+import MoreFeaturesSection from "../components/dashboard/MoreFeaturesSection";
+import NewSection from "../components/dashboard/NewSection";
+import PerformanceSection from "../components/dashboard/PerformanceSection";
+import ScheduleSection from "../components/dashboard/ScheduleSection";
+import TodoSection from "../components/dashboard/TodoSection";
+import WeatherSection from "../components/dashboard/WeatherSection";
+import WelcomeSection from "../components/dashboard/WelcomeSection";
 
-const HomeLayout = styled.div`
-  grid-template-columns: repeat(8, 1fr);
-  gap: ${space.medium};
+const VerticalLayout = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 100vh;
+  overflow: auto;
 `;
 
-const CommonHeader = styled.header`
-  grid-row: 1 / 2;
-  grid-column: 1 / span 8;
+const MainContentLayout = styled.div`
+  flex: 1;
+  padding: ${space.medium};
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-content: flex-start;
+  gap: ${space.medium};
+  background: ${colors.gray4};
 `;
 
 const Dashboard = () => {
   return (
-    <HomeLayout>
-      <CommonHeader>header</CommonHeader>
-
-      <div>Home</div>
-    </HomeLayout>
+    <VerticalLayout>
+      <CommonHeader />
+      <MainContentLayout>
+        <WelcomeSection />
+        <WeatherSection />
+        <TodoSection />
+        <PerformanceSection />
+        <NewSection />
+        <ScheduleSection />
+        <MoreFeaturesSection />
+      </MainContentLayout>
+    </VerticalLayout>
   );
 };
 
