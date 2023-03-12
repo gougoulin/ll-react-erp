@@ -165,6 +165,9 @@ const initialState = {
       { text: "records", icon: "EVENT", color: "#00CCCC" },
       { text: "hotel menu", icon: "HOTEL_MENU", color: "#FF1111" }
     ]
+  },
+  commonHeader: {
+    data: ["home", "tasks", "attendance", "news"]
   }
 };
 

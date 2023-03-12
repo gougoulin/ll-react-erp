@@ -10,23 +10,11 @@ const VerticalLayout = styled.div`
   overflow: auto;
 `;
 
-const MainContentLayout = styled.div`
-  flex: 1;
-  padding: ${space.medium};
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-content: flex-start;
-  gap: ${space.medium};
-  background: ${colors.gray4};
-`;
-
 const DashboardOutlet = () => {
   return (
     <VerticalLayout>
       <CommonHeader />
-      <MainContentLayout>
         <Outlet />
-      </MainContentLayout>
     </VerticalLayout>
   );
 };

@@ -7,16 +7,23 @@ export const login = {
 
 export const main = {
   index: "/",
-  home: "/home",
-  dashboard: "/dashboard",
-  project: "/project",
-  email: "/email",
-  team: "/team",
-  agenda: "/agenda",
-  meeting: "/meeting",
-  contact: "/contact",
-  setting: "/setting",
-  default: "/home"
+  home: "home",
+  dashboard: "dashboard",
+  project: "project",
+  email: "email",
+  team: "team",
+  agenda: "agenda",
+  meeting: "meeting",
+  contact: "contact",
+  setting: "setting",
+  default: "home"
+};
+
+export const dashboradRoutes: Record<string, string> = {
+  home: "",
+  tasks: "tasks",
+  attendance: "attendance",
+  news: "news"
 };
 
 export const navMenu: Record<string, string> = {
