@@ -17,6 +17,9 @@ import Project from "../pages/Project";
 import Setting from "../pages/Setting";
 import Dashboard from "../pages/Dashboard";
 import Team from "../pages/Team";
+import DashboardWithOutlet from "../pages/DashboardWithOutlet";
+import Tasks from "../pages/Tasks";
+import Attendance from "../pages/Attendance";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +36,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePageWithOutlet />,
     children: [
-      { index: true, path: main.dashboard, element: <Dashboard /> },
+      {
+        path: main.dashboard,
+        element: <DashboardWithOutlet />,
+        children: [
+          { path: "", element: <Dashboard /> },
+          { path: "task", element: <Tasks /> },
+          { path: "attendance", element: <Attendance /> }
+        ]
+      },
       { path: main.agenda, element: <Agenda /> },
       { path: main.contact, element: <Contact /> },
       { path: main.email, element: <Email /> },
