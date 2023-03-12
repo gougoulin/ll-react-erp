@@ -5,19 +5,19 @@ import SectionHeader from './SectionHeader';
 import Title from './Title';
 
 const StyledNewSection = styled(SectionBase)`
-  grid-column: 10 / span 3;
+  grid-column: 1 / span 3;
   grid-row: 3 / span 1;
   min-height: 22em;
 `;
 
-const MoreFeaturesSection = () => {
+const NewsSection = () => {
   return (
     <StyledNewSection>
       <SectionHeader>
-        <Title>useful links</Title>
+        <Title>news</Title>
       </SectionHeader>
     </StyledNewSection>
   );
 }
 
-export default MoreFeaturesSection
+export default NewsSection

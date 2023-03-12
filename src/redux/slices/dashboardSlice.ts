@@ -1,5 +1,30 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+const initChartData = {
+  xAxis: {
+    type: "category",
+    data: ["Week 1", "Week 2", "Week 3", "Week 4"],
+    axisTick: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    }
+  },
+  yAxis: {
+    type: "value",
+    show: false
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80] as any[],
+      type: "bar"
+    }
+  ]
+};
+
+export type BarChartDataType = typeof initChartData;
+
 const initialState = {
   welcomeSection: {
     imgUri:
@@ -55,6 +80,10 @@ const initialState = {
         action: ["view"]
       }
     ])
+  },
+  performanceSection: {
+    option: JSON.stringify(initChartData),
+    title: "performance"
   }
 };
 

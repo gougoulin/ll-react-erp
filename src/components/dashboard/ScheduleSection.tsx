@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import SectionBase from "./SectionBase";
+import SectionHeader from "./SectionHeader";
+import Title from "./Title";
 
 const StyledNewSection = styled(SectionBase)`
   grid-column: 4 / span 6;
@@ -9,7 +11,13 @@ const StyledNewSection = styled(SectionBase)`
 `;
 
 const ScheduleSection = () => {
-  return <StyledNewSection>ScheduleSection</StyledNewSection>;
+  return (
+    <StyledNewSection>
+      <SectionHeader>
+        <Title>schedule</Title>
+      </SectionHeader>
+    </StyledNewSection>
+  );
 };
 
 export default ScheduleSection;

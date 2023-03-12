@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, space } from "../assets/css/params";
 import CommonHeader from "../components/dashboard/CommonHeader";
 import MoreFeaturesSection from "../components/dashboard/MoreFeaturesSection";
-import NewSection from "../components/dashboard/NewSection";
+import NewsSection from "../components/dashboard/NewsSection";
 import PerformanceSection from "../components/dashboard/PerformanceSection";
 import ScheduleSection from "../components/dashboard/ScheduleSection";
 import TodoSection from "../components/dashboard/TodoSection";
@@ -35,7 +35,7 @@ const Dashboard = () => {
         <WeatherSection />
         <TodoSection />
         <PerformanceSection />
-        <NewSection />
+        <NewsSection />
         <ScheduleSection />
         <MoreFeaturesSection />
       </MainContentLayout>
