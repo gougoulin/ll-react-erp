@@ -1,11 +1,10 @@
-import React, { Component, createRef, PureComponent, RefObject } from "react";
-import { connect, Provider } from "react-redux";
-import styled from "styled-components";
-import { RootState } from "../../redux/store";
 import * as charts from "echarts";
-import CenterAllBox from "../layout/CenterAllBox";
-import { BarChartDataType } from "../../redux/slices/dashboardSlice";
+import { createRef, PureComponent, RefObject } from "react";
+import { connect } from "react-redux";
+import styled from "styled-components";
 import { colors } from "../../assets/css/params";
+import { BarChartDataType } from "../../redux/slices/dashboardSlice";
+import { RootState } from "../../redux/store";
 
 const StyledChartBox = styled.div`
   width: 350px;
@@ -64,8 +63,6 @@ class ChartBox extends PureComponent<ChartBoxProps, ChartBoxState> {
   }
 
   render() {
-    console.log("render echart");
-
     return <StyledChartBox ref={this.chartRef} />;
   }
 }
