@@ -47,7 +47,7 @@ const useIconTextNav = (menu: string[]) => {
         <span>{txt}</span>
       </Wrapper>
     );
-    if ("/" + txt === location.pathname) {
+    if (txt === location.pathname.split("/")[1]) {
       ret = (
         <ActiveWrapper
           variants={wrapperVariants}

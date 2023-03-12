@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { colors, space } from "../../assets/css/params";
 import { RootState } from "../../redux/store";
-import { dashboradRoutes } from "../../router/constants";
+import { dashboradRoutes, main } from "../../router/constants";
 
 const StyledCommonHeader = styled.header`
   min-height: 5em;
@@ -23,12 +23,22 @@ const StyledTab = styled.span`
   font-size: 1.6rem;
   font-weight: 500;
   padding: 1em 3em;
-  height: 100%;
   display: flex;
   align-items: center;
   text-transform: capitalize;
   cursor: pointer;
-  background: ${({ bgColor }: StyledTabProps) => bgColor};
+  /* background: ${({ bgColor }: StyledTabProps) => bgColor}; */
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    border-bottom: 4px solid ${({ bgColor }: StyledTabProps) => bgColor};
+  }
 
   &:hover {
     color: ${colors.primary};
@@ -50,8 +60,8 @@ const CommonHeader = () => {
       return (
         <StyledTab
           bgColor={
-            pathname === "/dashboard" + (it === "home" ? "" : "/" + it)
-              ? colors.gray3
+            pathname === "/" + main.dashboard + (it === "home" ? "" : "/" + it)
+              ? colors.primary
               : "transparent"
           }
           onClick={() => {

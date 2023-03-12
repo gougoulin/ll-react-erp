@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { MainContentLayout } from "./Dashboard";
 
 const Tasks = () => {
-  return (
-    <div>Tasks</div>
-  )
-}
+  return <MainContentLayout>Tasks</MainContentLayout>;
+};
 
-export default Tasks
+export default Tasks;

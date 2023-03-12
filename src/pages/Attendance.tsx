@@ -1,8 +1,9 @@
 import React from 'react'
+import { MainContentLayout } from './Dashboard'
 
 const Attendance = () => {
   return (
-    <div>Attendance</div>
+    <MainContentLayout>Attendance</MainContentLayout>
   )
 }
 

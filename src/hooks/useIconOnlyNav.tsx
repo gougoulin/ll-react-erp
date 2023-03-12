@@ -25,7 +25,9 @@ const useIconOnlyNav = (menu: string[]) => {
         {<AsideIcon txt={txt} />}
       </StyledNavLink>
     );
-    if ("/" + txt === location.pathname) {
+    console.log(txt, location.pathname.split("/")[1]);
+    
+    if (txt === location.pathname.split("/")[1]) {
       ret = (
         <ActiveNavLink key={`aside-nav-${idx}`} to={navMenu[txt]}>
           {<AsideIcon txt={txt} />}

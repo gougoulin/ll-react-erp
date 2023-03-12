@@ -8,7 +8,7 @@ import TodoSection from "../components/dashboard/TodoSection";
 import WeatherSection from "../components/dashboard/WeatherSection";
 import WelcomeSection from "../components/dashboard/WelcomeSection";
 
-const MainContentLayout = styled.div`
+export const MainContentLayout = styled.div`
   flex: 1;
   padding: ${space.medium};
   display: grid;
