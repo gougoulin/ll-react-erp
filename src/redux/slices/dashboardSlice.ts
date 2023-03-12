@@ -115,6 +115,56 @@ const initialState = {
         date: moment().format("YYYY-MM-DD")
       }
     ]
+  },
+  scheduleSection: {
+    title: "schedule",
+    data: [
+      {
+        id: 1,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        id: 2,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        id: 3,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        id: 4,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        id: 5,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        id: 6,
+        txt: "Meeting with other departments, location: Root 201",
+        date: moment().format("YYYY-MM-DD")
+      }
+    ]
+  },
+  moreFeaturesSection: {
+    title: "useful links",
+    data: [
+      { text: "video meeting", icon: "VIDEO_MEETING", color: "#00CCCC" },
+      { text: "team learn", icon: "READING_GROUP", color: "#0066FF" },
+      {
+        text: "government websites",
+        icon: "GOVERNMENT_SITES",
+        color: "#FFCC00"
+      },
+      { text: "archieve", icon: "ARCHIEVE", color: "#0066FF" },
+      { text: "records", icon: "EVENT", color: "#00CCCC" },
+      { text: "hotel menu", icon: "HOTEL_MENU", color: "#FF1111" }
+    ]
   }
 };
 

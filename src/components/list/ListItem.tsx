@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledListItem = styled.li`
   font-size: 1.6rem;
-  padding: 0.8em;
+  padding: 1em;
 `;
 
 const ListItem = StyledListItem;

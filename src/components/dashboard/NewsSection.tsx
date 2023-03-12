@@ -7,6 +7,8 @@ import { RootState } from "../../redux/store";
 import TextButton from "../button/TextButton";
 import ColList from "../list/ColList";
 import ListItem from "../list/ListItem";
+import ContentBox from "./ContentBox";
+import DateText from "./DateText";
 import SectionBase from "./SectionBase";
 import SectionHeader from "./SectionHeader";
 import Title from "./Title";
@@ -15,6 +17,8 @@ const StyledNewSection = styled(SectionBase)`
   grid-column: 1 / span 3;
   grid-row: 3 / span 1;
   min-height: 22em;
+  min-width: 10em;
+  overflow: auto;
 `;
 
 const NewsSectionHeader = styled(SectionHeader)`
@@ -31,9 +35,6 @@ const NewsListItem = styled(ListItem)`
 const TitleOfNewsWithLik = styled(Link)`
   text-decoration: none;
   color: ${colors.gray11};
-`;
-const DateText = styled.span`
-  color: ${colors.gray7};
 `;
 
 const NewsSection = () => {
@@ -54,13 +55,15 @@ const NewsSection = () => {
 
   return (
     <StyledNewSection>
-      <NewsSectionHeader>
-        <Title>{title}</Title>
-        <TextButton>{actionText}</TextButton>
-      </NewsSectionHeader>
-      <div>
-        <ColList>{list}</ColList>
-      </div>
+      <ContentBox>
+        <NewsSectionHeader>
+          <Title>{title}</Title>
+          <TextButton>{actionText}</TextButton>
+        </NewsSectionHeader>
+        <div>
+          <ColList>{list}</ColList>
+        </div>
+      </ContentBox>
     </StyledNewSection>
   );
 };
