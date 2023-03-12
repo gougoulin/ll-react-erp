@@ -1,10 +1,9 @@
-import React, { createRef, useEffect, useRef } from "react";
-import styled from "styled-components";
-import SectionBase from "./SectionBase";
-import * as echarts from "echarts";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 import { RootState } from "../../redux/store";
 import ChartBox from "./ChartBox";
+import ContentBox from "./ContentBox";
+import SectionBase from "./SectionBase";
 import SectionHeader from "./SectionHeader";
 import Title from "./Title";
 
@@ -15,12 +14,13 @@ const StyledPerformanceSection = styled(SectionBase)`
   
 `;
 
-const ContentBox = styled.div`
+const PerformanceContentBox = styled(ContentBox)`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
 `;
+
 
 const PerformanceSectionHeader = styled(SectionHeader)`
   align-self: stretch;
@@ -51,12 +51,12 @@ const PerformanceSection = () => {
 
   return (
     <StyledPerformanceSection>
-      <ContentBox>
+      <PerformanceContentBox>
         <PerformanceSectionHeader>
           <Title>{title}</Title>
         </PerformanceSectionHeader>
         <ChartBox />
-      </ContentBox>
+      </PerformanceContentBox>
     </StyledPerformanceSection>
   );
 };

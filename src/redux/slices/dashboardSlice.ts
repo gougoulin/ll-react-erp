@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import moment from "moment";
 
 const initChartData = {
   xAxis: {
@@ -84,6 +85,36 @@ const initialState = {
   performanceSection: {
     option: JSON.stringify(initChartData),
     title: "performance"
+  },
+  newsSection: {
+    title: "news",
+    actionText: "more",
+    data: [
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      },
+      {
+        txt: "some breaking news",
+        date: moment().format("YYYY-MM-DD")
+      }
+    ]
   }
 };
 
