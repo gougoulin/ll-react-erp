@@ -6,6 +6,7 @@ import BaseTable from "../components/BaseTable";
 import ButtonBase from "../components/button/ButtonBase";
 import BaseInput from "../components/form/BaseInput";
 import BaseSelect from "../components/form/BaseSelect";
+import Pagination from "../components/Pagination";
 import { RootState } from "../redux/store";
 import { MainContentLayout } from "./Dashboard";
 
@@ -22,6 +23,22 @@ const TableSection = styled.section`
   grid-row: 2 / 3;
   min-height: 70vh;
   background-color: ${colors.gray1};
+`;
+
+const PaginationSection = styled.section`
+  grid-column: 1 / 13;
+  grid-row: 3 / 4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: ${colors.gray1};
+  align-items: center;
+  min-height: 4em;
+  padding: 0 2em;
+`;
+
+const PaginationDescription = styled.span`
+  color: ${colors.gray7};
 `;
 
 const StyledForm = styled.form`
@@ -61,9 +78,47 @@ const Tasks = () => {
   const [selectedArea, setSelectedArea] = useState<string>("Select Area");
   const [selectedDept, setSelectedDept] = useState<string>("Select Dept");
   const [targetTask, setTargetTask] = useState<string>("Search task here");
-  const dataJson = useSelector(
-    (state: RootState) => state.task.taskList
-  );
+  const dataJson = useSelector((state: RootState) => state.task.taskList);
+  const total = useSelector((state: RootState) => state.task.total);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagesBtn, setPagesBtn] = useState([1, 2, 3]);
+  // TODO not implemented, to be added
+  const [itemsPerPager, setItemsPerPage] = useState(5);
+
+  const totalPages = Math.ceil(total / itemsPerPager);
+
+  // event handlers
+  const handleNextPage = (): void => {
+    if (currentPage < totalPages) {
+      setCurrentPage((state) => state + 1);
+    }
+    // choose showed page buttons
+    if (
+      currentPage === pagesBtn[pagesBtn.length - 1] &&
+      currentPage !== totalPages
+    ) {
+      const nextPageBtn = new Array(3).fill(currentPage).map((_, idx) => {
+        return _ + 1 + idx;
+      });
+      setPagesBtn(nextPageBtn);
+    }
+  };
+  const handlePrevPage = (): void => {
+    if (currentPage > 1) {
+      setCurrentPage((state) => state - 1);
+    }
+    if (currentPage === pagesBtn[0] && currentPage > 1) {
+      const nextPageBtn = new Array(pagesBtn.length)
+        .fill(currentPage)
+        .map((_, idx) => {
+          return _ - pagesBtn.length + idx;
+        });
+      setPagesBtn(nextPageBtn);
+    }
+  };
+  const handleClickPage = (page: number): void => {
+    setCurrentPage(page);
+  };
   return (
     <MainContentLayout>
       <SectionHeader>
@@ -102,6 +157,19 @@ const Tasks = () => {
           hasCheckBox={false}
         />
       </TableSection>
+      <PaginationSection>
+        <PaginationDescription>
+          {currentPage} of {totalPages} pages
+        </PaginationDescription>
+        <Pagination
+          pages={pagesBtn}
+          handleClickPage={handleClickPage}
+          handleNextPage={handleNextPage}
+          handlePrevPage={handlePrevPage}
+          paginationLabel={"task-pagination"}
+          currentPage={currentPage}
+        />
+      </PaginationSection>
     </MainContentLayout>
   );
 };

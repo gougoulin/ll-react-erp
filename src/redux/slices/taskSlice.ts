@@ -12,6 +12,7 @@ interface TaskItem {
 const initialState = {
   area: ["area1", "area2", "area3", "area4", "area5"],
   dept: ["dept. 1", "dept. 2", "dept. 3", "dept. 4", "dept. 5"],
+  total: 50,
   taskList: JSON.stringify([
     {
       name: "job 1 job 1",

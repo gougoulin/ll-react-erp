@@ -40,15 +40,22 @@ const BaseTable = (props: BaseTableProps) => {
   const { itemStr, tableName, hasCheckBox } = props;
   const items = itemStr.length === 0 ? [] : JSON.parse(itemStr);
   const keys = items[0] ? Object.getOwnPropertyNames(items[0]) : [];
+
+  /**
+   * Tabele head line
+   */
   const tableTh = keys.map((key, ind) => {
-    return <StyledTh key={`${tableName}-${key}-ind`}>{key}</StyledTh>;
+    return <StyledTh key={`${tableName}-${key}-${ind}`}>{key}</StyledTh>;
   });
 
+  /**
+   * Table rows
+   */
   const tableTrList = items.map((item: any, indx: number) => {
     return (
       <StyledTr
         whileHover={{ color: colors.primary, backgroundColor: colors.dark }}
-        key={`${item.employee}`}
+        key={`table-row__${indx}`}
       >
         {/* show checkbox when hasCheckBox === true */}
         {hasCheckBox && (
@@ -58,7 +65,7 @@ const BaseTable = (props: BaseTableProps) => {
         )}
         {keys.map((title, idx) => {
           return (
-            <StyledTd key={`${tableName}-th-${title}-{idx}`}>
+            <StyledTd key={`${tableName}-tr-${indx}-${title}-${idx}`}>
               {item[title]}
             </StyledTd>
           );
