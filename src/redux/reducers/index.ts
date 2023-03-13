@@ -4,6 +4,7 @@ import authReducer from "../slices/authSlice";
 import asideSlice from "../slices/asideSlice";
 import messageSlice from "../slices/messageSlice";
 import dashboardSlice from "../slices/dashboardSlice";
+import taskSlice from "../slices/taskSlice";
 
 export default combineReducers({
   user: userReducer,
@@ -11,5 +12,6 @@ export default combineReducers({
   layout: asideSlice,
   message: messageSlice,
   aside: asideSlice,
-  dashboard: dashboardSlice
+  dashboard: dashboardSlice,
+  task: taskSlice
 });
