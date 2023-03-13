@@ -81,11 +81,15 @@ const Tasks = () => {
   const dataJson = useSelector((state: RootState) => state.task.taskList);
   const total = useSelector((state: RootState) => state.task.total);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pagesBtn, setPagesBtn] = useState([1, 2, 3]);
-  // TODO not implemented, to be added
-  const [itemsPerPager, setItemsPerPage] = useState(5);
-
-  const totalPages = Math.ceil(total / itemsPerPager);
+  // TODO setItemsPerPage is not implemented, to be added
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const totalPages = Math.ceil(total / itemsPerPage);
+  const [pagesBtn, setPagesBtn] = useState(() => {
+    if (totalPages > 2) {
+      return [1, 2, 3];
+    }
+    return new Array(totalPages).fill(1).map((it, idx) => it + idx);
+  });
 
   // event handlers
   const handleNextPage = (): void => {
@@ -155,6 +159,8 @@ const Tasks = () => {
           itemStr={dataJson}
           tableName={"dashboard-task__table"}
           hasCheckBox={false}
+          currentPage={currentPage}
+          rowsPerPage={itemsPerPage}
         />
       </TableSection>
       <PaginationSection>

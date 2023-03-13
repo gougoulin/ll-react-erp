@@ -12,7 +12,7 @@ interface TaskItem {
 const initialState = {
   area: ["area1", "area2", "area3", "area4", "area5"],
   dept: ["dept. 1", "dept. 2", "dept. 3", "dept. 4", "dept. 5"],
-  total: 50,
+  total: 13,
   taskList: JSON.stringify([
     {
       name: "job 1 job 1",
@@ -43,6 +43,54 @@ const initialState = {
       type: "urgent",
       state: "open",
       unit: "Finance",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 4 job 4",
+      type: "urgent",
+      state: "done",
+      unit: "Design",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 1 job 1",
+      type: "urgent",
+      state: "done",
+      unit: "IT",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 1 job 1",
+      type: "urgent",
+      state: "done",
+      unit: "IT",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 4 job 4",
+      type: "urgent",
+      state: "done",
+      unit: "Design",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 1 job 1",
+      type: "urgent",
+      state: "done",
+      unit: "IT",
+      updateAt: "2023-01-20",
+      duration: "2h30m"
+    },
+    {
+      name: "job 1 job 1",
+      type: "urgent",
+      state: "done",
+      unit: "IT",
       updateAt: "2023-01-20",
       duration: "2h30m"
     },

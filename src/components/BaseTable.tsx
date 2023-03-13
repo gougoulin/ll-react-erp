@@ -15,6 +15,7 @@ const StyledTh = styled.th`
 `;
 const StyledTd = styled.td`
   line-height: 5;
+  min-width: 5em;
 `;
 const CheckboxTd = styled(StyledTd)`
   width: 2em;
@@ -34,11 +35,17 @@ interface BaseTableProps {
   itemStr: string;
   tableName: string;
   hasCheckBox: boolean;
+  currentPage: number;
+  rowsPerPage: number;
 }
 
 const BaseTable = (props: BaseTableProps) => {
-  const { itemStr, tableName, hasCheckBox } = props;
-  const items = itemStr.length === 0 ? [] : JSON.parse(itemStr);
+  const { itemStr, tableName, hasCheckBox, currentPage, rowsPerPage } = props;
+  let items = itemStr.length === 0 ? [] : JSON.parse(itemStr);
+  items = items.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
   const keys = items[0] ? Object.getOwnPropertyNames(items[0]) : [];
 
   /**
