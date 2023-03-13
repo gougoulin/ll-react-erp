@@ -55,7 +55,7 @@ const StyledText = styled.p`
 const SectionContentBox = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1em 0;
 `;
 
@@ -95,7 +95,13 @@ const MoreFeaturesSection = () => {
         <SectionHeader>
           <Title>{title}</Title>
         </SectionHeader>
-        <SectionContentBox>{list}</SectionContentBox>
+        <SectionContentBox>
+          {list}
+          {/* push 2nd row to the left to align with the first row */}
+          <IconLinkBox></IconLinkBox>
+          <IconLinkBox></IconLinkBox>
+          <IconLinkBox></IconLinkBox>
+        </SectionContentBox>
       </ContentBox>
     </StyledNewSection>
   );
