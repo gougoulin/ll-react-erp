@@ -28,6 +28,10 @@ const IconLinkBox = styled(motion.div)`
   cursor: pointer;
 `;
 
+const DummyIconLinkBox = styled(IconLinkBox)`
+  cursor: default;
+`;
+
 interface IconWrapperProps {
   bgColor: string;
 }
@@ -98,9 +102,9 @@ const MoreFeaturesSection = () => {
         <SectionContentBox>
           {list}
           {/* push 2nd row to the left to align with the first row */}
-          <IconLinkBox></IconLinkBox>
-          <IconLinkBox></IconLinkBox>
-          <IconLinkBox></IconLinkBox>
+          <DummyIconLinkBox></DummyIconLinkBox>
+          <DummyIconLinkBox></DummyIconLinkBox>
+          <DummyIconLinkBox></DummyIconLinkBox>
         </SectionContentBox>
       </ContentBox>
     </StyledNewSection>
