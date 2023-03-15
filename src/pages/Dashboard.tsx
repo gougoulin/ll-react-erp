@@ -7,6 +7,7 @@ import ScheduleSection from "../components/dashboard/ScheduleSection";
 import TodoSection from "../components/dashboard/TodoSection";
 import WeatherSection from "../components/dashboard/WeatherSection";
 import WelcomeSection from "../components/dashboard/WelcomeSection";
+import PageSwitchAnimationWrapper from "../components/PageSwitchAnimationWrapper";
 
 export const MainContentLayout = styled.div`
   flex: 1;
@@ -20,7 +21,7 @@ export const MainContentLayout = styled.div`
 
 const Dashboard = () => {
   return (
-    <>
+    <PageSwitchAnimationWrapper>
       <MainContentLayout>
         <WelcomeSection />
         <WeatherSection />
@@ -30,7 +31,7 @@ const Dashboard = () => {
         <ScheduleSection />
         <MoreFeaturesSection />
       </MainContentLayout>
-    </>
+    </PageSwitchAnimationWrapper>
   );
 };
 

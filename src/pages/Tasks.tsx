@@ -6,6 +6,7 @@ import BaseTable from "../components/BaseTable";
 import ButtonBase from "../components/button/ButtonBase";
 import BaseInput from "../components/form/BaseInput";
 import BaseSelect from "../components/form/BaseSelect";
+import PageSwitchAnimationWrapper from "../components/PageSwitchAnimationWrapper";
 import Pagination from "../components/Pagination";
 import { RootState } from "../redux/store";
 import { MainContentLayout } from "./Dashboard";
@@ -124,59 +125,61 @@ const Tasks = () => {
     setCurrentPage(page);
   };
   return (
-    <MainContentLayout>
-      <SectionHeader>
-        <NewTaskBtn>new task</NewTaskBtn>
-        <StyledForm>
-          <AreaSelectBox>
-            <BaseSelect
-              valueSelected={selectedArea}
-              setValueSelected={setSelectedArea}
-              options={area}
-            />
-          </AreaSelectBox>
-          <DeptSelectBox>
-            <BaseSelect
-              valueSelected={selectedDept}
-              setValueSelected={setSelectedDept}
-              options={dept}
-            />
-          </DeptSelectBox>
-          <SearchInputBox>
-            <SearchTaskInput
-              type="text"
-              value={targetTask}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setTargetTask(e.target.value)
-              }
-            />
-          </SearchInputBox>
-          <SearchBtn>search</SearchBtn>
-        </StyledForm>
-      </SectionHeader>
-      <TableSection>
-        <BaseTable
-          itemStr={dataJson}
-          tableName={"dashboard-task__table"}
-          hasCheckBox={false}
-          currentPage={currentPage}
-          rowsPerPage={itemsPerPage}
-        />
-      </TableSection>
-      <PaginationSection>
-        <PaginationDescription>
-          {currentPage} of {totalPages} pages
-        </PaginationDescription>
-        <Pagination
-          pages={pagesBtn}
-          handleClickPage={handleClickPage}
-          handleNextPage={handleNextPage}
-          handlePrevPage={handlePrevPage}
-          paginationLabel={"task-pagination"}
-          currentPage={currentPage}
-        />
-      </PaginationSection>
-    </MainContentLayout>
+    <PageSwitchAnimationWrapper>
+      <MainContentLayout>
+        <SectionHeader>
+          <NewTaskBtn>new task</NewTaskBtn>
+          <StyledForm>
+            <AreaSelectBox>
+              <BaseSelect
+                valueSelected={selectedArea}
+                setValueSelected={setSelectedArea}
+                options={area}
+              />
+            </AreaSelectBox>
+            <DeptSelectBox>
+              <BaseSelect
+                valueSelected={selectedDept}
+                setValueSelected={setSelectedDept}
+                options={dept}
+              />
+            </DeptSelectBox>
+            <SearchInputBox>
+              <SearchTaskInput
+                type="text"
+                value={targetTask}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setTargetTask(e.target.value)
+                }
+              />
+            </SearchInputBox>
+            <SearchBtn>search</SearchBtn>
+          </StyledForm>
+        </SectionHeader>
+        <TableSection>
+          <BaseTable
+            itemStr={dataJson}
+            tableName={"dashboard-task__table"}
+            hasCheckBox={false}
+            currentPage={currentPage}
+            rowsPerPage={itemsPerPage}
+          />
+        </TableSection>
+        <PaginationSection>
+          <PaginationDescription>
+            {currentPage} of {totalPages} pages
+          </PaginationDescription>
+          <Pagination
+            pages={pagesBtn}
+            handleClickPage={handleClickPage}
+            handleNextPage={handleNextPage}
+            handlePrevPage={handlePrevPage}
+            paginationLabel={"task-pagination"}
+            currentPage={currentPage}
+          />
+        </PaginationSection>
+      </MainContentLayout>
+    </PageSwitchAnimationWrapper>
   );
 };
 

@@ -5,6 +5,7 @@ import { colors, space } from "../assets/css/params";
 import AttendanceCard from "../components/attendance/AttendanceCard";
 import BaseTable from "../components/BaseTable";
 import appIcons from "../components/icons";
+import PageSwitchAnimationWrapper from "../components/PageSwitchAnimationWrapper";
 import Pagination from "../components/Pagination";
 import { RootState } from "../redux/store";
 import { MainContentLayout } from "./Dashboard";
@@ -88,33 +89,35 @@ const Attendance = () => {
     });
 
   return (
-    <MainContentLayout>
-      <SectionHeader>
-        <SummarySection>{cardList}</SummarySection>
-      </SectionHeader>
-      <TableSection>
-        <BaseTable
-          itemStr={dataJson}
-          tableName={"dashboard-task__table"}
-          hasCheckBox={false}
-          currentPage={currentPage}
-          rowsPerPage={itemsPerPage}
-        />
-      </TableSection>
-      <PaginationSection>
-        <PaginationDescription>
-          {currentPage} of {totalPages} pages
-        </PaginationDescription>
-        <Pagination
-          pages={pagesBtn}
-          handleClickPage={handleClickPage}
-          handleNextPage={handleNextPage}
-          handlePrevPage={handlePrevPage}
-          paginationLabel={"task-pagination"}
-          currentPage={currentPage}
-        />
-      </PaginationSection>
-    </MainContentLayout>
+    <PageSwitchAnimationWrapper>
+      <MainContentLayout>
+        <SectionHeader>
+          <SummarySection>{cardList}</SummarySection>
+        </SectionHeader>
+        <TableSection>
+          <BaseTable
+            itemStr={dataJson}
+            tableName={"dashboard-task__table"}
+            hasCheckBox={false}
+            currentPage={currentPage}
+            rowsPerPage={itemsPerPage}
+          />
+        </TableSection>
+        <PaginationSection>
+          <PaginationDescription>
+            {currentPage} of {totalPages} pages
+          </PaginationDescription>
+          <Pagination
+            pages={pagesBtn}
+            handleClickPage={handleClickPage}
+            handleNextPage={handleNextPage}
+            handlePrevPage={handlePrevPage}
+            paginationLabel={"task-pagination"}
+            currentPage={currentPage}
+          />
+        </PaginationSection>
+      </MainContentLayout>
+    </PageSwitchAnimationWrapper>
   );
 };
 

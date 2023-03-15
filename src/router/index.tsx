@@ -41,6 +41,10 @@ const router = createBrowserRouter(
       element: <HomePageWithOutlet />,
       children: [
         {
+          index: true,
+          element: <Navigate to="dashboard" />
+        },
+        {
           path: "dashboard",
           element: <DashboardWithOutlet />,
           children: [

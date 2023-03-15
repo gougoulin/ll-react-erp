@@ -1,6 +1,6 @@
+import { AnimatePresence } from "framer-motion";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { colors, space } from "../assets/css/params";
 import CommonHeader from "../components/dashboard/CommonHeader";
 
 const VerticalLayout = styled.div`
@@ -14,7 +14,9 @@ const DashboardOutlet = () => {
   return (
     <VerticalLayout>
       <CommonHeader />
-        <Outlet />
+      <AnimatePresence mode="wait">
+          <Outlet />
+      </AnimatePresence>
     </VerticalLayout>
   );
 };
