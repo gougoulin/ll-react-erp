@@ -22,6 +22,7 @@ import DashboardWithOutlet from "../pages/DashboardWithOutlet";
 import Tasks from "../pages/Tasks";
 import Attendance from "../pages/Attendance";
 import News from "../pages/News";
+import UnderConstruction from "../pages/UnderConstruction";
 
 const router = createBrowserRouter(
   [
@@ -47,16 +48,16 @@ const router = createBrowserRouter(
             // { path: dashboradRoutes.home, element: <Dashboard /> },
             { path: dashboradRoutes.tasks, element: <Tasks /> },
             { path: dashboradRoutes.attendance, element: <Attendance /> },
-            { path: dashboradRoutes.news, element: <News /> }
+            { path: dashboradRoutes.news, element: <UnderConstruction /> }
           ]
         },
-        { path: main.agenda, element: <Agenda /> },
-        { path: main.contact, element: <Contact /> },
-        { path: main.email, element: <Email /> },
-        { path: main.meeting, element: <Meeting /> },
-        { path: main.project, element: <Project /> },
-        { path: main.setting, element: <Setting /> },
-        { path: main.team, element: <Team /> }
+        { path: main.agenda, element: <UnderConstruction /> },
+        { path: main.contact, element: <UnderConstruction /> },
+        { path: main.email, element: <UnderConstruction /> },
+        { path: main.meeting, element: <UnderConstruction /> },
+        { path: main.project, element: <UnderConstruction /> },
+        { path: main.setting, element: <UnderConstruction /> },
+        { path: main.team, element: <UnderConstruction /> }
       ]
     }
   ],
