@@ -10,7 +10,7 @@ import Pagination from "../components/Pagination";
 import { RootState } from "../redux/store";
 import { MainContentLayout } from "./Dashboard";
 
-const SectionHeader = styled.section`
+export const SectionHeader = styled.section`
   grid-column: 1 / 13;
   grid-row: 1 / 2;
   display: flex;
@@ -18,14 +18,14 @@ const SectionHeader = styled.section`
   align-items: center;
 `;
 
-const TableSection = styled.section`
+export const TableSection = styled.section`
   grid-column: 1 / 13;
   grid-row: 2 / 3;
   min-height: 70vh;
   background-color: ${colors.gray1};
 `;
 
-const PaginationSection = styled.section`
+export const PaginationSection = styled.section`
   grid-column: 1 / 13;
   grid-row: 3 / 4;
   display: flex;
@@ -37,7 +37,7 @@ const PaginationSection = styled.section`
   padding: 0 2em;
 `;
 
-const PaginationDescription = styled.span`
+export const PaginationDescription = styled.span`
   color: ${colors.gray7};
 `;
 

@@ -11,7 +11,8 @@ const StyledTh = styled.th`
   text-transform: capitalize;
   text-align: center;
   line-height: 5;
-  color: ${colors.gray11};
+  color: ${colors.gray7};
+  font-weight: 400;
 `;
 const StyledTd = styled.td`
   line-height: 5;

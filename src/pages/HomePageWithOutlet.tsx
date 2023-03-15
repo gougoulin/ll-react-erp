@@ -8,6 +8,8 @@ import AsideIconText from "../components/aside/AsideIconText";
 
 const HomePageBox = styled.div`
   max-height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: ${({ siderWidth }: HomePageBoxProps) => siderWidth} 1fr;
 `;

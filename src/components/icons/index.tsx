@@ -1,6 +1,9 @@
 import { IconType } from "react-icons";
 import {
   AiFillProject,
+  AiOutlineCheckCircle,
+  AiOutlineClockCircle,
+  AiOutlineCoffee,
   AiOutlineContacts,
   AiOutlineFileZip,
   AiOutlineGlobal,
@@ -13,7 +16,8 @@ import {
   AiOutlineSetting,
   AiOutlineTeam,
   AiOutlineUser,
-  AiOutlineVideoCamera
+  AiOutlineVideoCamera,
+  AiOutlineWarning
 } from "react-icons/ai";
 import { BsCalendar2Event, BsDisplay } from "react-icons/bs";
 import { MdOutlineWbCloudy, MdOutlineWbSunny } from "react-icons/md";
@@ -46,6 +50,14 @@ export const ARCHIEVE = AiOutlineFileZip;
 export const EVENT = BsCalendar2Event;
 export const HOTEL_MENU = BiRestaurant;
 
+/**
+ * Attendance page 
+ */
+export const ATTENDANCE_CHECK = AiOutlineCheckCircle;
+export const ATTENDANCE_LATE = AiOutlineClockCircle;
+export const ATTENDANCE_ABSENT = AiOutlineCoffee;
+export const ATTENDANCE_WARN = AiOutlineWarning;
+
 const appIcons: Record<string, IconType> = {
   Dashboard,
   Project,
@@ -66,7 +78,11 @@ const appIcons: Record<string, IconType> = {
   GOVERNMENT_SITES,
   ARCHIEVE,
   EVENT,
-  HOTEL_MENU
+  HOTEL_MENU,
+  ATTENDANCE_CHECK,
+  ATTENDANCE_LATE,
+  ATTENDANCE_ABSENT,
+  ATTENDANCE_WARN
 };
 
 export type AppIcons = typeof appIcons;

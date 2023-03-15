@@ -5,6 +5,7 @@ import asideSlice from "../slices/asideSlice";
 import messageSlice from "../slices/messageSlice";
 import dashboardSlice from "../slices/dashboardSlice";
 import taskSlice from "../slices/taskSlice";
+import attendenceSlice from "../slices/attendenceSlice";
 
 export default combineReducers({
   user: userReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   message: messageSlice,
   aside: asideSlice,
   dashboard: dashboardSlice,
-  task: taskSlice
+  task: taskSlice,
+  attendance: attendenceSlice
 });
